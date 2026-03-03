@@ -1466,15 +1466,9 @@ about_title: "About",
       $('#downloadCv').addEventListener('click', ()=>{
         alert("把這個按鈕換成你的 PDF 連結即可，例如：/LionK-CV.pdf");
       });
-      $('#copyLink').addEventListener('click', async ()=>{
-        const link = location.href.replace(location.hash,'') || 'https://your-domain.com';
-        try{
-          await navigator.clipboard.writeText(link);
-          alert("已複製（範例）： " + link);
-        }catch{
-          alert("你的瀏覽器不支援自動複製，請手動複製： " + link);
-        }
-      });
+      $('#copyLink').addEventListener('click', ()=>{
+        window.open('https://zozo337.github.io/chatbox/', '_blank', 'noopener,noreferrer');
+        });
     })();
       const likeBtn = document.getElementById('likeBtn');
 const likeCountEl = document.getElementById('likeCount');
