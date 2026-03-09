@@ -15,9 +15,9 @@
       --muted:rgba(255,255,255,.62);
       --muted2:rgba(255,255,255,.48);
 
-      --p:#a855f7;      /* purple neon */
-      --m:#ff2fb1;      /* magenta neon */
-      --c:#22d3ee;      /* cyan accent */
+      --p:#a855f7;
+      --m:#ff2fb1;
+      --c:#22d3ee;
       --g:rgba(168,85,247,.24);
       --glow: 0 0 18px rgba(168,85,247,.22), 0 0 28px rgba(255,47,177,.14);
       --glow2: 0 0 20px rgba(34,211,238,.14);
@@ -42,23 +42,23 @@
       overflow-x:hidden;
     }
 
-    /* subtle grid */
     body::before{
       content:"";
       position:fixed; inset:0;
       background:
         linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255,255,255,.04) 1px, transparent 1px);
-      background-size: 42px 42px;
+      background-size:42px 42px;
       opacity:.08;
       pointer-events:none;
       mask-image: radial-gradient(ellipse at 30% 10%, black 20%, transparent 70%);
     }
 
     a{ color:inherit; text-decoration:none; }
+
     .app{
       display:grid;
-      grid-template-columns: 320px 1fr;
+      grid-template-columns:320px 1fr;
       min-height:100vh;
       gap:22px;
       padding:18px;
@@ -66,14 +66,16 @@
 
     /* Sidebar */
     .sidebar{
-      position:sticky; top:18px;
-      height: calc(100vh - 36px);
+      position:sticky;
+      top:18px;
+      height:calc(100vh - 36px);
       border:1px solid var(--stroke);
-      border-radius: var(--radius2);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      box-shadow: var(--shadow);
+      border-radius:var(--radius2);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow:var(--shadow);
       overflow:hidden;
     }
+
     .side-inner{
       height:100%;
       display:flex;
@@ -81,98 +83,83 @@
       padding:18px;
       gap:14px;
     }
-	.brand::before{
-	  animation: brand-breath 4.5s ease-in-out infinite;
-    }
+
     .brand{
-      display:flex; gap:12px; align-items:center;
+      display:flex;
+      gap:12px;
+      align-items:center;
       padding:12px;
       border-radius:14px;
-      background: rgba(0,0,0,.22);
+      background:rgba(0,0,0,.22);
       border:1px solid rgba(255,255,255,.08);
+      animation: brand-breath 4.5s ease-in-out infinite;
     }
-	
-.hero::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:10px;
-  bottom:10px;
-  width:3px;
-  border-radius:3px;
 
-  background: linear-gradient(
-    180deg,
-    rgba(168,85,247,.95),
-    rgba(255,47,177,.95),
-    rgba(34,211,238,.95)
-  );
-
-  animation: neon-breath 3.6s ease-in-out infinite;
-}
-
-
-
-	
-	.avatar {
-      width: 46px;      /* 固定寬度 */
-      height: 46px;     /* 固定高度 */
-      border-radius: 16px;
-      overflow: hidden; /* 關鍵 1：裁切掉超出 46px 的部分 */
-      flex: 0 0 auto;   /* 關鍵 2：防止 avatar 容器被 flex 擠壓變形 */
-      border: 1px solid rgba(255,255,255,.14);
-      box-shadow: var(--glow);
-      position: relative;
-    }
     .avatar{
-      width:46px; height:46px;
+      width:46px;
+      height:46px;
       border-radius:16px;
+      overflow:hidden;
+      flex:0 0 auto;
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow:var(--glow);
       background:
         radial-gradient(circle at 30% 20%, rgba(255,47,177,.55), transparent 55%),
         radial-gradient(circle at 70% 60%, rgba(168,85,247,.55), transparent 60%),
         radial-gradient(circle at 40% 80%, rgba(34,211,238,.40), transparent 55%),
         rgba(255,255,255,.07);
-      border:1px solid rgba(255,255,255,.14);
-      box-shadow: var(--glow);
-      flex:0 0 auto;
-	  overflow: hidden;
     }
-	.avatar img {
-      width: 100%;       /* 強制圖片寬度等於框框 */
-      height: 100%;      /* 強制圖片高度等於框框 */
-      object-fit: cover; /* 關鍵：保持比例縮放，不會變形 */
-      display: block;
+
+    .avatar img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
     }
+
     .brand h1{
       margin:0;
       font-size:16px;
       letter-spacing:.2px;
       line-height:1.25;
     }
+
     .brand p{
       margin:4px 0 0;
       font-size:12px;
       color:var(--muted);
     }
 
-    .pill-row{ display:flex; gap:10px; flex-wrap:wrap; }
+    .pill-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
     .pill{
       display:inline-flex;
       align-items:center;
       gap:8px;
       padding:8px 10px;
       border-radius:999px;
-      background: rgba(0,0,0,.22);
+      background:rgba(0,0,0,.22);
       border:1px solid rgba(255,255,255,.10);
       font-size:12px;
       color:var(--muted);
     }
+
     .dot{
-      width:8px; height:8px; border-radius:99px;
-      background: linear-gradient(90deg, var(--p), var(--m));
-      box-shadow: var(--glow);
+      width:8px;
+      height:8px;
+      border-radius:99px;
+      background:linear-gradient(90deg, var(--p), var(--m));
+      box-shadow:var(--glow);
     }
-    .dot.c{ background: linear-gradient(90deg, var(--c), var(--p)); box-shadow: var(--glow2); }
+
+    .dot.c{
+      background:linear-gradient(90deg, var(--c), var(--p));
+      box-shadow:var(--glow2);
+    }
 
     .nav{
       margin-top:6px;
@@ -183,42 +170,10 @@
       border-top:1px solid rgba(255,255,255,.08);
       border-bottom:1px solid rgba(255,255,255,.08);
     }
-	/* ===== Sidebar Active 流動螢光包圍框 ===== */
-.nav a{
-  position: relative;
-  overflow: hidden;
-}
-
-.nav a.active::before{
-  content:"";
-  position:absolute;
-  inset:-1px;
-  border-radius:14px;
-  padding:1.5px;
-
-  background:
-    linear-gradient(
-      120deg,
-      rgba(168,85,247,.95),
-      rgba(255,47,177,.95),
-      rgba(34,211,238,.95),
-      rgba(168,85,247,.95)
-    );
-  background-size:300% 300%;
-  animation: navNeonFlow 6s linear infinite;
-
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-
-  pointer-events:none;
-}
-
-
 
     .nav a{
+      position:relative;
+      overflow:hidden;
       padding:10px 12px;
       border-radius:14px;
       color:var(--muted);
@@ -227,27 +182,54 @@
       align-items:center;
       justify-content:space-between;
       gap:10px;
-      transition: all .18s ease;
+      transition:all .18s ease;
     }
+
+    .nav a.active::before{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      border-radius:14px;
+      padding:1.5px;
+      background:
+        linear-gradient(
+          120deg,
+          rgba(168,85,247,.95),
+          rgba(255,47,177,.95),
+          rgba(34,211,238,.95),
+          rgba(168,85,247,.95)
+        );
+      background-size:300% 300%;
+      animation:navNeonFlow 6s linear infinite;
+      -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite:xor;
+      mask-composite:exclude;
+      pointer-events:none;
+    }
+
     .nav a:hover{
-      background: rgba(0,0,0,.22);
-      border-color: rgba(255,255,255,.12);
-      color: rgba(255,255,255,.82);
-      transform: translateY(-1px);
+      background:rgba(0,0,0,.22);
+      border-color:rgba(255,255,255,.12);
+      color:rgba(255,255,255,.82);
+      transform:translateY(-1px);
     }
+
     .nav a.active{
-      color: rgba(255,255,255,.92);
-      background: linear-gradient(90deg, rgba(168,85,247,.18), rgba(255,47,177,.10));
-      border-color: rgba(255,47,177,.18);
-      box-shadow: var(--glow);
+      color:rgba(255,255,255,.92);
+      background:linear-gradient(90deg, rgba(168,85,247,.18), rgba(255,47,177,.10));
+      border-color:rgba(255,47,177,.18);
+      box-shadow:var(--glow);
     }
+
     .nav small{
       font-size:11px;
       color:rgba(255,255,255,.55);
       border:1px solid rgba(255,255,255,.12);
       padding:2px 8px;
       border-radius:999px;
-      background: rgba(0,0,0,.22);
+      background:rgba(0,0,0,.22);
     }
 
     .quick{
@@ -255,34 +237,38 @@
       flex-direction:column;
       gap:10px;
     }
+
     .quick h3{
       margin:0;
       font-size:12px;
       letter-spacing:.8px;
       text-transform:uppercase;
-      color: rgba(255,255,255,.58);
+      color:rgba(255,255,255,.58);
       padding:0 2px;
     }
+
     .chips{
       display:flex;
       flex-wrap:wrap;
       gap:8px;
     }
+
     .chip{
       cursor:pointer;
       user-select:none;
       padding:7px 10px;
       border-radius:999px;
       font-size:12px;
-      color: rgba(255,255,255,.72);
-      background: rgba(0,0,0,.22);
+      color:rgba(255,255,255,.72);
+      background:rgba(0,0,0,.22);
       border:1px solid rgba(255,255,255,.10);
-      transition: all .18s ease;
+      transition:all .18s ease;
     }
+
     .chip:hover{
-      transform: translateY(-1px);
-      border-color: rgba(34,211,238,.22);
-      box-shadow: var(--glow2);
+      transform:translateY(-1px);
+      border-color:rgba(34,211,238,.22);
+      box-shadow:var(--glow2);
     }
 
     .side-footer{
@@ -302,61 +288,71 @@
       gap:8px;
       align-items:center;
     }
+
     .btn{
       cursor:pointer;
       border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.28);
-      color: rgba(255,255,255,.78);
+      background:rgba(0,0,0,.28);
+      color:rgba(255,255,255,.78);
       padding:9px 12px;
       border-radius:14px;
       font-size:12px;
-      transition: all .18s ease;
-      box-shadow: 0 0 0 rgba(0,0,0,0);
+      transition:all .18s ease;
+      box-shadow:0 0 0 rgba(0,0,0,0);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
     }
+
     .btn:hover{
-      transform: translateY(-1px);
-      border-color: rgba(255,47,177,.20);
-      box-shadow: var(--glow);
+      transform:translateY(-1px);
+      border-color:rgba(255,47,177,.20);
+      box-shadow:var(--glow);
     }
+
     .btn.primary{
-      background: linear-gradient(90deg, rgba(168,85,247,.22), rgba(255,47,177,.14));
-      border-color: rgba(255,47,177,.20);
-      box-shadow: var(--glow);
+      background:linear-gradient(90deg, rgba(168,85,247,.22), rgba(255,47,177,.14));
+      border-color:rgba(255,47,177,.20);
+      box-shadow:var(--glow);
     }
 
     /* Main */
     .main{
-      border-radius: var(--radius2);
+      border-radius:var(--radius2);
       border:1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
-      box-shadow: var(--shadow);
+      background:rgba(255,255,255,.03);
+      box-shadow:var(--shadow);
       overflow:hidden;
-      min-height: calc(100vh - 36px);
+      min-height:calc(100vh - 36px);
       position:relative;
     }
 
     .topbar{
       padding:14px 16px;
       border-bottom:1px solid rgba(255,255,255,.08);
-      background: linear-gradient(180deg, rgba(0,0,0,.34), rgba(0,0,0,.10));
+      background:linear-gradient(180deg, rgba(0,0,0,.34), rgba(0,0,0,.10));
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:12px;
     }
+
     .topbar .hint{
-      display:flex; align-items:center; gap:10px;
+      display:flex;
+      align-items:center;
+      gap:10px;
       color:rgba(255,255,255,.70);
       font-size:12px;
     }
+
     .kbd{
-      font-family: var(--mono);
+      font-family:var(--mono);
       font-size:11px;
       padding:3px 7px;
       border-radius:10px;
       border:1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.26);
-      color: rgba(255,255,255,.72);
+      background:rgba(0,0,0,.26);
+      color:rgba(255,255,255,.72);
     }
 
     .content{
@@ -367,40 +363,62 @@
     }
 
     section{
-      scroll-margin-top: 84px;
+      scroll-margin-top:84px;
       border:1px solid rgba(255,255,255,.08);
-      border-radius: var(--radius2);
-      background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+      border-radius:var(--radius2);
+      background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
       padding:18px;
       position:relative;
       overflow:hidden;
     }
+
     section::before{
       content:"";
       position:absolute;
       inset:-2px;
-      background: radial-gradient(600px 240px at 20% 15%, rgba(168,85,247,.12), transparent 60%),
-                  radial-gradient(520px 220px at 85% 30%, rgba(255,47,177,.10), transparent 60%);
+      background:
+        radial-gradient(600px 240px at 20% 15%, rgba(168,85,247,.12), transparent 60%),
+        radial-gradient(520px 220px at 85% 30%, rgba(255,47,177,.10), transparent 60%);
       opacity:.8;
       pointer-events:none;
-      filter: blur(0px);
     }
+
     section > *{ position:relative; }
 
     .hero{
       padding:22px 18px;
       display:grid;
-      grid-template-columns: 1.2fr .8fr;
+      grid-template-columns:1.2fr .8fr;
       gap:16px;
       align-items:stretch;
+      position:relative;
     }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:10px;
+      bottom:10px;
+      width:3px;
+      border-radius:3px;
+      background:linear-gradient(
+        180deg,
+        rgba(168,85,247,.95),
+        rgba(255,47,177,.95),
+        rgba(34,211,238,.95)
+      );
+      animation:neon-breath 3.6s ease-in-out infinite;
+    }
+
     .hero h2{
       margin:0;
       font-size:28px;
       line-height:1.15;
       letter-spacing:.2px;
-      text-shadow: 0 0 20px rgba(168,85,247,.18);
+      text-shadow:0 0 20px rgba(168,85,247,.18);
     }
+
     .hero p{
       margin:10px 0 0;
       color:rgba(255,255,255,.72);
@@ -410,70 +428,82 @@
 
     .metrics{
       display:grid;
-      grid-template-columns: 1fr;
+      grid-template-columns:1fr;
       gap:10px;
     }
+
     .metric{
       border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.22);
-      border-radius: 18px;
+      background:rgba(0,0,0,.22);
+      border-radius:18px;
       padding:12px;
     }
+
     .metric b{
       display:block;
       font-size:12px;
       letter-spacing:.8px;
       text-transform:uppercase;
-      color: rgba(255,255,255,.70);
+      color:rgba(255,255,255,.70);
     }
+
     .metric span{
       display:block;
       margin-top:6px;
       font-size:13px;
-      color: rgba(255,255,255,.80);
+      color:rgba(255,255,255,.80);
       line-height:1.5;
     }
 
     .grid{
       display:grid;
-      grid-template-columns: repeat(12, 1fr);
+      grid-template-columns:repeat(12, 1fr);
       gap:14px;
     }
+
     .card{
-      grid-column: span 6;
+      grid-column:span 6;
       border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.22);
-      border-radius: var(--radius);
+      background:rgba(0,0,0,.22);
+      border-radius:var(--radius);
       padding:14px;
       overflow:hidden;
       position:relative;
-      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+      transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
     }
+
     .card:hover{
-      transform: translateY(-2px);
-      border-color: rgba(255,47,177,.22);
-      box-shadow: var(--glow);
+      transform:translateY(-2px);
+      border-color:rgba(255,47,177,.22);
+      box-shadow:var(--glow);
     }
-    .card h4{ margin:0; font-size:14px; }
+
+    .card h4{
+      margin:0;
+      font-size:14px;
+    }
+
     .card p{
       margin:8px 0 0;
       color:rgba(255,255,255,.70);
       font-size:13px;
       line-height:1.65;
     }
+
     .tags{
       margin-top:10px;
       display:flex;
       gap:8px;
       flex-wrap:wrap;
     }
+
     .tag{
       font-size:11px;
       padding:4px 8px;
       border-radius:999px;
       border:1px solid rgba(255,255,255,.12);
       color:rgba(255,255,255,.72);
-      background: rgba(255,255,255,.04);
+      background:rgba(255,255,255,.04);
     }
 
     h3.section-title{
@@ -481,52 +511,63 @@
       font-size:14px;
       letter-spacing:.8px;
       text-transform:uppercase;
-      color: rgba(255,255,255,.72);
+      color:rgba(255,255,255,.72);
       display:flex;
       align-items:center;
       gap:10px;
     }
+
     .bar{
-      width:18px; height:10px; border-radius:8px;
-      background: linear-gradient(90deg, var(--p), var(--m));
-      box-shadow: var(--glow);
+      width:18px;
+      height:10px;
+      border-radius:8px;
+      background:linear-gradient(90deg, var(--p), var(--m));
+      box-shadow:var(--glow);
     }
 
     .two{
       display:grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns:1fr 1fr;
       gap:14px;
       align-items:start;
     }
 
     .box{
       border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.22);
-      border-radius: var(--radius);
+      background:rgba(0,0,0,.22);
+      border-radius:var(--radius);
       padding:14px;
     }
-    .box h4{ margin:0 0 10px; font-size:13px; color: rgba(255,255,255,.86); }
+
+    .box h4{
+      margin:0 0 10px;
+      font-size:13px;
+      color:rgba(255,255,255,.86);
+    }
+
     .list{
       margin:0;
       padding-left:18px;
-      color: rgba(255,255,255,.74);
+      color:rgba(255,255,255,.74);
       line-height:1.7;
       font-size:13px;
     }
+
     .list li{ margin:6px 0; }
 
     pre.diagram{
       margin:0;
       padding:12px;
-      border-radius: 16px;
+      border-radius:16px;
       border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.26);
+      background:rgba(0,0,0,.26);
       overflow:auto;
-      font-family: var(--mono);
+      font-family:var(--mono);
       font-size:12px;
       line-height:1.55;
-      color: rgba(255,255,255,.76);
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,.02);
+      color:rgba(255,255,255,.76);
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.02);
+      white-space:pre-wrap;
     }
 
     .cta{
@@ -543,104 +584,107 @@
       align-items:center;
       justify-content:space-between;
     }
-    .muted{ color: rgba(255,255,255,.66); font-size:13px; line-height:1.7; }
 
+    .muted{
+      color:rgba(255,255,255,.66);
+      font-size:13px;
+      line-height:1.7;
+    }
 
-    /* Mobile */
+    .like-box{
+      margin-top:14px;
+    }
+
+    .like-btn{
+      cursor:pointer;
+      font-size:14px;
+      padding:10px 16px;
+      border-radius:999px;
+      color:rgba(255,255,255,.9);
+      background:rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.14);
+      transition:all .2s ease;
+      box-shadow:inset 0 0 0 rgba(0,0,0,0);
+    }
+
+    .like-btn:hover{
+      border-color:rgba(255,47,177,.45);
+      box-shadow:0 0 12px rgba(255,47,177,.35);
+    }
+
+    .like-btn.glow{
+      animation:likeGlow .6s ease;
+    }
+
     @media (max-width: 980px){
-      .app{ grid-template-columns: 1fr; }
+      .app{ grid-template-columns:1fr; }
       .sidebar{ position:relative; height:auto; }
       .main{ min-height:auto; }
-      .hero{ grid-template-columns: 1fr; }
-      .card{ grid-column: span 12; }
-      .two{ grid-template-columns: 1fr; }
+      .hero{ grid-template-columns:1fr; }
+      .card{ grid-column:span 12; }
+      .two{ grid-template-columns:1fr; }
     }
-	@keyframes neon-breath {
-  0% {
-    opacity: .55;
-    box-shadow:
-      0 0 8px rgba(168,85,247,.35),
-      0 0 16px rgba(255,47,177,.20),
-      0 0 24px rgba(34,211,238,.12);
-  }
-  50% {
-    opacity: 1;
-    box-shadow:
-      0 0 14px rgba(168,85,247,.55),
-      0 0 26px rgba(255,47,177,.35),
-      0 0 42px rgba(34,211,238,.22);
-  }
-  100% {
-    opacity: .55;
-    box-shadow:
-      0 0 8px rgba(168,85,247,.35),
-      0 0 16px rgba(255,47,177,.20),
-      0 0 24px rgba(34,211,238,.12);
-  }
-}
-@keyframes navNeonFlow{
-  0%   { background-position:   0% 50%; }
-  100% { background-position: 300% 50%; }
-}
-@keyframes brand-breath{
-  0%,100%{
-    box-shadow:
-      0 0 10px rgba(168,85,247,.25),
-      0 0 18px rgba(255,47,177,.16);
-  }
-  50%{
-    box-shadow:
-      0 0 18px rgba(168,85,247,.45),
-      0 0 36px rgba(255,47,177,.28),
-      0 0 48px rgba(34,211,238,.18);
-  }
-}
-.like-box{
-  margin-top: 14px;
-}
 
-.like-btn{
-  cursor: pointer;
-  font-size: 14px;
-  padding: 10px 16px;
-  border-radius: 999px;
-  color: rgba(255,255,255,.9);
-  background: rgba(0,0,0,.35);
-  border: 1px solid rgba(255,255,255,.14);
-  transition: all .2s ease;
-  box-shadow: inset 0 0 0 rgba(0,0,0,0);
-}
+    @keyframes neon-breath{
+      0%{
+        opacity:.55;
+        box-shadow:
+          0 0 8px rgba(168,85,247,.35),
+          0 0 16px rgba(255,47,177,.20),
+          0 0 24px rgba(34,211,238,.12);
+      }
+      50%{
+        opacity:1;
+        box-shadow:
+          0 0 14px rgba(168,85,247,.55),
+          0 0 26px rgba(255,47,177,.35),
+          0 0 42px rgba(34,211,238,.22);
+      }
+      100%{
+        opacity:.55;
+        box-shadow:
+          0 0 8px rgba(168,85,247,.35),
+          0 0 16px rgba(255,47,177,.20),
+          0 0 24px rgba(34,211,238,.12);
+      }
+    }
 
-/* hover 微亮 */
-.like-btn:hover{
-  border-color: rgba(255,47,177,.45);
-  box-shadow: 0 0 12px rgba(255,47,177,.35);
-}
+    @keyframes navNeonFlow{
+      0%{ background-position:0% 50%; }
+      100%{ background-position:300% 50%; }
+    }
 
-/* 點擊發光 */
-.like-btn.glow{
-  animation: likeGlow .6s ease;
-}
+    @keyframes brand-breath{
+      0%,100%{
+        box-shadow:
+          0 0 10px rgba(168,85,247,.25),
+          0 0 18px rgba(255,47,177,.16);
+      }
+      50%{
+        box-shadow:
+          0 0 18px rgba(168,85,247,.45),
+          0 0 36px rgba(255,47,177,.28),
+          0 0 48px rgba(34,211,238,.18);
+      }
+    }
 
-@keyframes likeGlow{
-  0%{
-    box-shadow: 0 0 0 rgba(255,47,177,0);
-    transform: scale(1);
-  }
-  50%{
-    box-shadow:
-      0 0 18px rgba(168,85,247,.55),
-      0 0 32px rgba(255,47,177,.45),
-      0 0 48px rgba(34,211,238,.35);
-    transform: scale(1.08);
-  }
-  100%{
-    box-shadow: 0 0 0 rgba(255,47,177,0);
-    transform: scale(1);
-  }
-}
-
-
+    @keyframes likeGlow{
+      0%{
+        box-shadow:0 0 0 rgba(255,47,177,0);
+        transform:scale(1);
+      }
+      50%{
+        box-shadow:
+          0 0 18px rgba(168,85,247,.55),
+          0 0 32px rgba(255,47,177,.45),
+          0 0 48px rgba(34,211,238,.35);
+        transform:scale(1.08);
+      }
+      100%{
+        box-shadow:0 0 0 rgba(255,47,177,0);
+        transform:scale(1);
+      }
+    }
   </style>
 </head>
 <body>
@@ -650,9 +694,10 @@
       <div class="side-inner">
         <div class="brand">
           <div class="avatar">
-	        <img src="avatar.jpg" alt="Zozo profile">
+            <img src="avatar.jpg" alt="Zozo profile">
           </div>
-          <div> <h1 data-i18n="name">Zozo Meng</h1>
+          <div>
+            <h1 data-i18n="name">Zozo Meng</h1>
             <p data-i18n="role">AI System & Deployment Engineer</p>
           </div>
         </div>
@@ -717,17 +762,24 @@
               <p data-i18n="hero_sub">
                 專注私有化 AI、企業內部 AI 助理、RAG 知識庫、以及與既有流程/系統整合。從 GPU/Runtime 到 API、Bot，強調可落地、可維護、可控風險。
               </p>
-                <div class="like-box">
-                  <button id="likeBtn" class="like-btn">
-                     👍 <span id="likeCount">0</span>
-                     </button>
-                </div>
+
+              <div class="like-box">
+                <button id="likeBtn" class="like-btn">
+                  👍 <span id="likeCount">0</span>
+                </button>
+              </div>
+
               <div class="cta">
                 <a class="btn primary" href="#contact" data-i18n="cta_contact">Contact</a>
                 <a class="btn" href="#ai" data-i18n="cta_arch">View Reference Architecture</a>
-                <a class="btn" href="javascript:void(0)" id="downloadCv" data-i18n="cta_cv">Download CV (placeholder)</a>
+                <a class="btn"
+                   href="https://zozo337.github.io/Resume-Zozo-Meng.pdf"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   data-i18n="cta_cv">Download CV</a>
               </div>
             </div>
+
             <div class="metrics" aria-label="Key metrics">
               <div class="metric">
                 <b data-i18n="m1_t">Private AI Deployment</b>
@@ -749,14 +801,21 @@
               <h4 data-i18n="home_card1_t">What I deliver</h4>
               <p data-i18n="home_card1_d">可部署的 AI 系統：架構、選型、部署、監控、回復機制，並能接進企業流程。</p>
               <div class="tags">
-                <span class="tag">LLM Runtime</span><span class="tag">RAG</span><span class="tag">API</span><span class="tag">Observability</span><span class="tag">AI Agent</span>
+                <span class="tag">LLM Runtime</span>
+                <span class="tag">RAG</span>
+                <span class="tag">API</span>
+                <span class="tag">Observability</span>
+                <span class="tag">AI Agent</span>
               </div>
             </div>
             <div class="card">
               <h4 data-i18n="home_card2_t">How I work</h4>
               <p data-i18n="home_card2_d">以可維護與風險控管為優先：RBAC、審計、資料邊界、fallback 與成本策略。</p>
               <div class="tags">
-                <span class="tag">RBAC</span><span class="tag">Audit</span><span class="tag">Fallback</span><span class="tag">Cost Control</span>
+                <span class="tag">RBAC</span>
+                <span class="tag">Audit</span>
+                <span class="tag">Fallback</span>
+                <span class="tag">Cost Control</span>
               </div>
             </div>
           </div>
@@ -782,8 +841,7 @@
 
             <div class="box">
               <h4 data-i18n="ai_ref_t">Reference architecture (text)</h4>
-              <pre class="diagram">
-User
+              <pre class="diagram">User
   ↓
 Web / Chat UI
   ↓
@@ -805,12 +863,20 @@ LLM Router (policies, fallback)
             <div class="card">
               <h4 data-i18n="ai_card1_t">Routing & fallback</h4>
               <p data-i18n="ai_card1_d">高峰/失敗時自動切換：本地/雲端、不同模型、不同溫度與長度策略，確保 SLA。</p>
-              <div class="tags"><span class="tag">Policy</span><span class="tag">Failover</span><span class="tag">SLA</span></div>
+              <div class="tags">
+                <span class="tag">Policy</span>
+                <span class="tag">Failover</span>
+                <span class="tag">SLA</span>
+              </div>
             </div>
             <div class="card">
               <h4 data-i18n="ai_card2_t">Permission-aware RAG</h4>
               <p data-i18n="ai_card2_d">文件分級與上下文裁剪：同一問題，不同角色拿到不同引用內容；全程可追溯。</p>
-              <div class="tags"><span class="tag">RBAC</span><span class="tag">Context</span><span class="tag">Traceability</span></div>
+              <div class="tags">
+                <span class="tag">RBAC</span>
+                <span class="tag">Context</span>
+                <span class="tag">Traceability</span>
+              </div>
             </div>
           </div>
         </section>
@@ -856,12 +922,20 @@ LLM Router (policies, fallback)
             <div class="card">
               <h4 data-i18n="int_card1_t">Workflow-aware assistant</h4>
               <p data-i18n="int_card1_d">把 AI 放進審批/工單/通知鏈路：只建議、不直接下結論；每步可追溯與回放。</p>
-              <div class="tags"><span class="tag">Webhook</span><span class="tag">Approvals</span><span class="tag">Replay</span></div>
+              <div class="tags">
+                <span class="tag">Webhook</span>
+                <span class="tag">Approvals</span>
+                <span class="tag">Replay</span>
+              </div>
             </div>
             <div class="card">
               <h4 data-i18n="int_card2_t">Bot & notification</h4>
               <p data-i18n="int_card2_d">用 Bot 把 AI 輸出送到正確的人：Lark/Telegram/LINE，支援事件觸發與權限控制。</p>
-              <div class="tags"><span class="tag">Lark</span><span class="tag">Telegram</span><span class="tag">LINE</span></div>
+              <div class="tags">
+                <span class="tag">Lark</span>
+                <span class="tag">Telegram</span>
+                <span class="tag">LINE</span>
+              </div>
             </div>
           </div>
 
@@ -904,8 +978,7 @@ LLM Router (policies, fallback)
             </div>
             <div class="box">
               <h4 data-i18n="sec_audit_t">Audit log schema (example)</h4>
-              <pre class="diagram">
-{
+              <pre class="diagram">{
   "request_id": "...",
   "actor": "user@company",
   "role": "HRBP",
@@ -919,6 +992,7 @@ LLM Router (policies, fallback)
             </div>
           </div>
         </section>
+
         <!-- AI Agent Case Study -->
         <section id="case">
           <h3 class="section-title"><span class="bar"></span><span data-i18n="case_title">AI Agent Case Study</span></h3>
@@ -940,8 +1014,7 @@ LLM Router (policies, fallback)
 
             <div class="box">
               <h4 data-i18n="case_arch_t">Architecture</h4>
-              <pre class="diagram">
-User (Lark Chat)
+              <pre class="diagram">User (Lark Chat)
   ↓
 Lark Bot (Webhook event)
   ↓
@@ -962,16 +1035,18 @@ Lark Open API (user management)
               </p>
             </div>
           </div>
+
           <div class="box" style="margin-top:16px;">
             <h4>Live Demo</h4>
-            <iframe 
+            <iframe
               width="100%"
               height="400"
               src="https://www.youtube.com/embed/-dU5LGf9cJs"
-              style="width:100%; aspect-ratio:16/9; border-radius:16px;"
+              style="width:100%; aspect-ratio:16/9; border-radius:16px; border:none;"
               allowfullscreen>
             </iframe>
           </div>
+
           <div class="grid" style="margin-top:14px;">
             <div class="card">
               <h4 data-i18n="case_card1_t">Intent & slot design</h4>
@@ -980,7 +1055,9 @@ Lark Open API (user management)
                 必要欄位不足時直接拒絕執行（hard-stop）。下一步規劃加入 feedback 引導補欄位（slot-check + re-prompt）。
               </p>
               <div class="tags">
-                <span class="tag">Intent</span><span class="tag">Structured Output</span><span class="tag">Validation</span>
+                <span class="tag">Intent</span>
+                <span class="tag">Structured Output</span>
+                <span class="tag">Validation</span>
               </div>
             </div>
 
@@ -990,7 +1067,9 @@ Lark Open API (user management)
                 AWS 常駐服務承接 webhook 事件；目前已在 production 穩定運行 10+ 天，日常被實際流程使用。
               </p>
               <div class="tags">
-                <span class="tag">AWS</span><span class="tag">Webhook</span><span class="tag">Service</span>
+                <span class="tag">AWS</span>
+                <span class="tag">Webhook</span>
+                <span class="tag">Service</span>
               </div>
             </div>
 
@@ -1001,7 +1080,9 @@ Lark Open API (user management)
                 變更行為封裝在受控的 workflow / automation 中，降低誤操作風險並便於後續審計。
               </p>
               <div class="tags">
-                <span class="tag">Allowlist</span><span class="tag">Risk Control</span><span class="tag">Audit-ready</span>
+                <span class="tag">Allowlist</span>
+                <span class="tag">Risk Control</span>
+                <span class="tag">Audit-ready</span>
               </div>
             </div>
 
@@ -1011,19 +1092,19 @@ Lark Open API (user management)
                 上線後成為日常流程入口，每日約 30–50 次人員維護操作由對話觸發完成，減少人工多步驟操作與錯誤風險。
               </p>
               <div class="tags">
-                <span class="tag">Production</span><span class="tag">30–50/day</span><span class="tag">Workflow</span>
+                <span class="tag">Production</span>
+                <span class="tag">30–50/day</span>
+                <span class="tag">Workflow</span>
               </div>
             </div>
           </div>
         </section>
 
-
-
         <!-- About -->
         <section id="about">
           <h3 class="section-title"><span class="bar"></span><span data-i18n="about_title">About</span></h3>
           <div class="split">
-            <p class="muted" data-i18n="about_desc" style="max-width: 820px; margin:0;">
+            <p class="muted" data-i18n="about_desc" style="max-width:820px; margin:0;">
               我偏好做「能落地、能被團隊維護」的系統。AI 在企業中不應該是黑盒，而是可觀測、可審計、可控成本的能力模組。
               我擅長把 GPU/Runtime、RAG、API 與 Bot 串成可運作的產品級內部工具。
             </p>
@@ -1036,12 +1117,20 @@ Lark Open API (user management)
             <div class="card">
               <h4 data-i18n="about_card1_t">Principles</h4>
               <p data-i18n="about_card1_d">可維護 > 炫技；可觀測 > 猜；可控風險 > 盲衝。</p>
-              <div class="tags"><span class="tag">Maintainability</span><span class="tag">Observability</span><span class="tag">Risk</span></div>
+              <div class="tags">
+                <span class="tag">Maintainability</span>
+                <span class="tag">Observability</span>
+                <span class="tag">Risk</span>
+              </div>
             </div>
             <div class="card">
               <h4 data-i18n="about_card2_t">What I enjoy</h4>
               <p data-i18n="about_card2_d">把複雜系統拆成模組：runtime、資料層、工具層、UI、權限與審計。</p>
-              <div class="tags"><span class="tag">System Design</span><span class="tag">Modularity</span><span class="tag">Integration</span></div>
+              <div class="tags">
+                <span class="tag">System Design</span>
+                <span class="tag">Modularity</span>
+                <span class="tag">Integration</span>
+              </div>
             </div>
           </div>
         </section>
@@ -1070,14 +1159,13 @@ Lark Open API (user management)
 
             <div class="box">
               <h4 data-i18n="contact_note_t">Note</h4>
-              <p class="muted" data-i18n="contact_note_d" style="margin:0;">
-              </p>
+              <p class="muted" data-i18n="contact_note_d" style="margin:0;"></p>
               <div class="cta" style="margin-top:12px;">
                 <a class="btn primary"
-                  href="https://zozo337.github.io/chatbox/"
-   				  target="_blank"
-                  rel="noopener noreferrer"
-                  id="chatAiLink">
+                   href="https://zozo337.github.io/chatbox/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   id="chatAiLink">
                   Zozo Chat AI
                 </a>
               </div>
@@ -1106,9 +1194,7 @@ Lark Open API (user management)
         nav_security: "資安與隱私",
         nav_about: "關於我",
         nav_contact: "聯絡我",
-		
         nav_case: "案例",
-nav_aibot: "Zozo Chat AI",
 
         quick_title: "快速聚焦",
         top_hint: "製作好用的AI系統，精緻，準確，快速。",
@@ -1182,7 +1268,6 @@ nav_aibot: "Zozo Chat AI",
         sec_r4: "安全護欄：輸入輸出過濾、敏感資訊遮罩、速率限制。",
         sec_audit_t: "審計 Log 範例",
 
-        
         case_title: "AI Agent 案例",
         case_desc: "已上線的 AI Agent：以對話驅動方式維護 Lark 人員資料，將多步驟人工操作轉為可控、可審計的工作流。",
         case_overview_t: "專案概覽",
@@ -1201,7 +1286,8 @@ nav_aibot: "Zozo Chat AI",
         case_card3_d: "以動作白名單（allowlist）與必要欄位檢查控風險：可解析但資訊不完整時「不執行」。變更行為封裝在受控的 workflow / automation 中，降低誤操作風險並便於後續審計。",
         case_card4_t: "使用狀況與成效",
         case_card4_d: "上線後成為日常流程入口，每日約 30–50 次人員維護操作由對話觸發完成，減少人工多步驟操作與錯誤風險。",
-about_title: "關於我",
+
+        about_title: "關於我",
         about_desc: "我偏好做「能落地、能被維護」的系統。AI 在企業中應該相對的透明化，是可觀測、可審計、可控成本的能力模組。我擅長把 GPU/Runtime、RAG、API 與 Bot 串成可運作的產品級內部工具。",
         about_cta: "聊聊合作",
         about_card1_t: "原則",
@@ -1216,27 +1302,27 @@ about_title: "關於我",
         contact_mail: "寄信給我",
         contact_back: "回到最上方",
         contact_note_t: "備註",
-        contact_note_d: "CHAT AI 上線中",
-        contact_copy: "Zozo CHAT AI",
+        contact_note_d: "CHAT AI 上線中"
       },
+
       en: {
         name: "Zozo Meng",
         role: "AI System & Deployment Engineer",
         pill1: "Private AI / On-prem",
         pill2: "Enterprise Integration",
         pill3: "Security & Audit",
+        pill4: "AI Agent / Workflow",
 
-                pill4: "AI Agent / Workflow",
-nav_home: "Home",
+        nav_home: "Home",
         nav_ai: "AI Architecture",
         nav_infra: "Deployment & Infra",
         nav_integration: "Enterprise Integration",
         nav_security: "Security & Privacy",
         nav_about: "About",
         nav_contact: "Contact",
+        nav_case: "Case Study",
 
-                nav_case: "Case Study",
-quick_title: "Quick Focus",
+        quick_title: "Quick Focus",
         top_hint: "Build deployable AI systems — not demos.",
         top_search_hint: "Press “/” to jump",
 
@@ -1244,7 +1330,7 @@ quick_title: "Quick Focus",
         hero_sub: "Focused on private AI, internal assistants, RAG knowledge systems, and integration into existing workflows. From GPU/runtime to APIs, bots, observability, and audit-ready security—built to run in production.",
         cta_contact: "Contact",
         cta_arch: "View Reference Architecture",
-        cta_cv: "Download CV (placeholder)",
+        cta_cv: "Download CV",
 
         m1_t: "Private AI Deployment",
         m1_d: "On-prem / Cloud with data boundaries, local runtime + tool calling.",
@@ -1308,7 +1394,6 @@ quick_title: "Quick Focus",
         sec_r4: "Guardrails: filtering, masking, rate limits.",
         sec_audit_t: "Audit log schema (example)",
 
-        
         case_title: "AI Agent Case Study",
         case_desc: "Production AI Agent integrated into Lark to maintain user/identity data via conversation — turning manual multi-step operations into a controlled, auditable workflow.",
         case_overview_t: "Overview",
@@ -1327,7 +1412,8 @@ quick_title: "Quick Focus",
         case_card3_d: "Action allowlists and required-field validation control risk. If information is incomplete, the system does not execute. Mutations are confined to controlled workflows/automation for safer operations and easier auditing.",
         case_card4_t: "Adoption & impact",
         case_card4_d: "Adopted as a daily workflow entrypoint. Around 30–50 user-management actions are triggered via chat per day, reducing manual steps and operational errors.",
-about_title: "About",
+
+        about_title: "About",
         about_desc: "I build systems that teams can maintain. AI in enterprises shouldn’t be a black box—it should be observable, auditable, and cost-aware. I connect GPU/runtime + RAG + APIs + bots into production-grade internal tools.",
         about_cta: "Let’s talk",
         about_card1_t: "Principles",
@@ -1342,8 +1428,7 @@ about_title: "About",
         contact_mail: "Email me",
         contact_back: "Back to top",
         contact_note_t: "Note",
-        contact_note_d: "To embed a resume bot: add /chat or a chat entry, and use a backend API for tool-calling + auditing.",
-        contact_copy: "Copy site link (placeholder)",
+        contact_note_d: "CHAT AI online"
       }
     };
 
@@ -1353,32 +1438,34 @@ about_title: "About",
     function applyLang(lang){
       document.documentElement.lang = (lang === 'zh') ? 'zh-Hant' : 'en';
       const dict = I18N[lang];
+
       $$('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if(!(key in dict)) return;
-        // Some entries contain HTML tags (e.g., <b>)
+
         if(String(dict[key]).includes("<")) el.innerHTML = dict[key];
         else el.textContent = dict[key];
       });
 
-      // Toggle button styles
       const zhBtn = $('#langZh');
       const enBtn = $('#langEn');
+
       if(lang === 'zh'){
-        zhBtn.classList.add('primary'); enBtn.classList.remove('primary');
+        zhBtn.classList.add('primary');
+        enBtn.classList.remove('primary');
       }else{
-        enBtn.classList.add('primary'); zhBtn.classList.remove('primary');
+        enBtn.classList.add('primary');
+        zhBtn.classList.remove('primary');
       }
 
       localStorage.setItem('lang', lang);
     }
 
-    // Smooth scrolling & active nav
     function scrollToHash(hash){
       const id = hash?.replace('#','');
       if(!id) return;
       const target = document.getElementById(id);
-      if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+      if(target) target.scrollIntoView({ behavior:'smooth', block:'start' });
     }
 
     function setActiveNav(){
@@ -1386,54 +1473,100 @@ about_title: "About",
       const links = $$('.navlink');
       const y = window.scrollY + 120;
       let current = sections[0]?.id || 'home';
+
       for(const s of sections){
         const top = s.getBoundingClientRect().top + window.scrollY;
         if(top <= y) current = s.id;
       }
-      links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#'+current));
+
+      links.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
     }
 
-    // Keyboard quick jump with "/"
     function openJump(){
       const ids = $$('main section[id]').map(s => s.id);
       const label = (id) => {
         const map = {
-          home: { zh: "首頁", en:"Home" },
-          ai: { zh: "AI 架構", en:"AI Architecture" },
-          infra: { zh: "部署與基礎設施", en:"Deployment & Infra" },
-          integration: { zh: "企業整合", en:"Enterprise Integration" },
-          security: { zh: "資安與隱私", en:"Security & Privacy" },
-          case: { zh: "案例", en:"Case Study" },
-          about: { zh: "關於我", en:"About" },
-          contact: { zh: "聯絡我", en:"Contact" }
+          home: { zh: "首頁", en: "Home" },
+          ai: { zh: "AI 架構", en: "AI Architecture" },
+          infra: { zh: "部署與基礎設施", en: "Deployment & Infra" },
+          integration: { zh: "企業整合", en: "Enterprise Integration" },
+          security: { zh: "資安與隱私", en: "Security & Privacy" },
+          case: { zh: "案例", en: "Case Study" },
+          about: { zh: "關於我", en: "About" },
+          contact: { zh: "聯絡我", en: "Contact" }
         };
         const lang = localStorage.getItem('lang') || 'zh';
-        return (map[id] ? map[id][lang] : id);
+        return map[id] ? map[id][lang] : id;
       };
-      const choice = prompt(
-        ids.map((id,i)=> `${i+1}. ${label(id)} (#${id})`).join('\n') +
-        "\n\n輸入數字或章節 id："
-      );
+
+      const lang = localStorage.getItem('lang') || 'zh';
+      const promptText = lang === 'zh'
+        ? ids.map((id, i) => `${i+1}. ${label(id)} (#${id})`).join('\n') + "\n\n輸入數字或章節 id："
+        : ids.map((id, i) => `${i+1}. ${label(id)} (#${id})`).join('\n') + "\n\nEnter number or section id:";
+
+      const choice = prompt(promptText);
       if(!choice) return;
+
       const trimmed = choice.trim();
       const n = Number(trimmed);
-      if(!Number.isNaN(n) && n>=1 && n<=ids.length) scrollToHash('#'+ids[n-1]);
-      else scrollToHash('#'+trimmed.replace('#',''));
+
+      if(!Number.isNaN(n) && n >= 1 && n <= ids.length){
+        scrollToHash('#' + ids[n - 1]);
+      }else{
+        scrollToHash('#' + trimmed.replace('#',''));
+      }
     }
 
-    // Init
+    // ----- Like button -----
+    function initLikeButton(){
+      const likeBtn = document.getElementById('likeBtn');
+      const likeCountEl = document.getElementById('likeCount');
+      if(!likeBtn || !likeCountEl) return;
+
+      let likes = Number(localStorage.getItem('likes')) || 0;
+      let liked = localStorage.getItem('liked') === 'true';
+
+      likeCountEl.textContent = likes;
+      if(liked) likeBtn.classList.add('liked');
+
+      likeBtn.addEventListener('click', () => {
+        if (!liked) {
+          likes++;
+          liked = true;
+          likeBtn.classList.add('liked');
+          triggerGlow(likeBtn);
+        } else {
+          likes--;
+          liked = false;
+          likeBtn.classList.remove('liked');
+        }
+
+        likeCountEl.textContent = likes;
+        localStorage.setItem('likes', likes);
+        localStorage.setItem('liked', liked);
+      });
+    }
+
+    function triggerGlow(el){
+      el.classList.remove('glow');
+      void el.offsetWidth;
+      el.classList.add('glow');
+    }
+
+    // ----- Init -----
     (function init(){
       $('#year').textContent = new Date().getFullYear();
 
-      // language
       const saved = localStorage.getItem('lang') || 'zh';
       applyLang(saved);
-      $('#langZh').addEventListener('click', ()=>applyLang('zh'));
-      $('#langEn').addEventListener('click', ()=>applyLang('en'));
 
-      // nav clicks
-      $$('.navlink').forEach(a=>{
-        a.addEventListener('click', (e)=>{
+      $('#langZh').addEventListener('click', () => applyLang('zh'));
+      $('#langEn').addEventListener('click', () => applyLang('en'));
+
+      $$('.navlink').forEach(a => {
+        a.addEventListener('click', (e) => {
           e.preventDefault();
           const hash = a.getAttribute('href');
           history.pushState(null, '', hash);
@@ -1441,9 +1574,8 @@ about_title: "About",
         });
       });
 
-      // chips
-      $$('.chip').forEach(ch=>{
-        ch.addEventListener('click', ()=>{
+      $$('.chip').forEach(ch => {
+        ch.addEventListener('click', () => {
           const to = ch.getAttribute('data-scroll');
           if(to){
             history.pushState(null, '', to);
@@ -1452,69 +1584,22 @@ about_title: "About",
         });
       });
 
-      // hash on load
-      if(location.hash) setTimeout(()=>scrollToHash(location.hash), 50);
+      if(location.hash){
+        setTimeout(() => scrollToHash(location.hash), 50);
+      }
 
-      // active nav on scroll
       setActiveNav();
-      window.addEventListener('scroll', setActiveNav, {passive:true});
+      window.addEventListener('scroll', setActiveNav, { passive:true });
 
-      // keyboard jump
-      window.addEventListener('keydown', (e)=>{
+      window.addEventListener('keydown', (e) => {
         if(e.key === '/' && !/input|textarea/i.test(document.activeElement?.tagName || "")){
           e.preventDefault();
           openJump();
         }
       });
 
-      // placeholders
-      $('#downloadCv').addEventListener('click', ()=>{
-        alert("把這個按鈕換成你的 PDF 連結即可，例如：/LionK-CV.pdf");
-      });
-      $('#copyLink').addEventListener('click', ()=>{
-        window.open('https://zozo337.github.io/chatbox/', '_blank', 'noopener,noreferrer');
-        });
+      initLikeButton();
     })();
-      const likeBtn = document.getElementById('likeBtn');
-const likeCountEl = document.getElementById('likeCount');
-
-// 狀態
-let likes = Number(localStorage.getItem('likes')) || 0;
-let liked = localStorage.getItem('liked') === 'true';
-
-// 初始化
-likeCountEl.textContent = likes;
-if (liked) likeBtn.classList.add('liked');
-
-// 點擊行為
-likeBtn.addEventListener('click', () => {
-  if (!liked) {
-    likes++;
-    liked = true;
-    likeBtn.classList.add('liked');
-    triggerGlow();
-  } else {
-    likes--;
-    liked = false;
-    likeBtn.classList.remove('liked');
-  }
-
-  likeCountEl.textContent = likes;
-  localStorage.setItem('likes', likes);
-  localStorage.setItem('liked', liked);
-});
-
-// 發光動畫
-function triggerGlow(){
-  likeBtn.classList.remove('glow');
-  void likeBtn.offsetWidth; // 強制重算
-  likeBtn.classList.add('glow');
-}
-
   </script>
 </body>
 </html>
-
-
-
-
